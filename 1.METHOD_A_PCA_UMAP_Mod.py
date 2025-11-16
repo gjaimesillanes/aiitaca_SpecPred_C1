@@ -1,4 +1,3 @@
-# SECTION 1: Imports
 import os
 import numpy as np
 import pandas as pd
@@ -93,7 +92,7 @@ def safe_umap_transform(umap_model, training_data, new_data):
     return combined_embedding[len(training_data):]
 
 def predict_new_spectra(model_path, new_spectra_dir, output_dir="Predictions_Results_2"):
-    # SECTION 2: Prediction and Visualization
+    # SECTION 1: Prediction and Visualization
     with open(model_path, 'rb') as f:
         model = pickle.load(f)
     os.makedirs(output_dir, exist_ok=True)
@@ -165,7 +164,7 @@ def create_prediction_visualizations(embedding_train, y_train, formulas_train,
                                    reference_frequencies, pca_components,
                                    cumulative_variance, n_components,
                                    output_dir):
-    # SECTION 3: Visualization
+    # SECTION 2: Visualization
     plt.figure(figsize=(10, 6))
     plt.plot(range(1, len(cumulative_variance)+1), cumulative_variance, 'b-o')
     plt.axhline(y=0.95, color='r', linestyle='--')
@@ -254,7 +253,7 @@ def create_prediction_visualizations(embedding_train, y_train, formulas_train,
 
 def analyze_and_save_pca(directory, sample_size=None, random_seed=42, output_dir="PCA_Results_GUAPOS_Combined_2", 
                         target_length=64607, variance_threshold=0.95):
-    # SECTION 4: PCA and UMAP Analysis
+    # SECTION 3: PCA and UMAP Analysis
     output_dir = os.path.abspath(output_dir)
     os.makedirs(output_dir, exist_ok=True)
     random.seed(random_seed)
@@ -551,4 +550,5 @@ if __name__ == "__main__":
         variance_threshold=variance_threshold,
         output_dir=r"/lustre/scratch-global/cab/gjaimes/2.DATASETS/PCA_Location_3D_Dataset2_25000_095_GENERIC_h11"
     )
+
 
