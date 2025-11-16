@@ -14,13 +14,13 @@ from mpl_toolkits.mplot3d import Axes3D
 import re
 
 #-----------------------------------------------------------
-#METHOD A - AI-ITACA Project - Chapter I
+# METHOD A - AI-ITACA Project - Chapter I
 #-----------------------------------------------------------
-#PCA and UMAP Analysis for Spectral Data and Prediction
-#This code performs PCA and UMAP dimensionality reduction on large spectral datasets, interpolates spectra, and enables prediction and visualization of new spectra using trained models. It processes input files, extracts physical parameters, and generates visualizations for both training and prediction results.
-#- INPUT: Directory containing spectral .txt files with headers including physical parameters.
-#- Custom hyperparameters: directory, sample_size (number of spectra), random_seed, output_dir, target_length (for interpolation), variance_threshold (for PCA reduction), batch_size, n_neighbors (for UMAP)
-#- OUTPUT: PCA and UMAP models, reference frequencies, physical parameters array, parameter names, valid files list, corrupted files list, prediction results, and visualization plots.
+# PCA and UMAP Analysis for Spectral Data and Prediction
+# This code performs PCA and UMAP dimensionality reduction on large spectral datasets, interpolates spectra, and enables prediction and visualization of new spectra using trained models. It processes input files, extracts physical parameters, and generates visualizations for both training and prediction results.
+# - INPUT: Directory containing spectral .txt files with headers including physical parameters.
+# - Custom hyperparameters: directory, sample_size (number of spectra), random_seed, output_dir, target_length (for interpolation), variance_threshold (for PCA reduction), batch_size, n_neighbors (for UMAP)
+# - OUTPUT: PCA and UMAP models, reference frequencies, physical parameters array, parameter names, valid files list, corrupted files list, prediction results, and visualization plots.
 
 
 def extract_molecule_formula(header):
@@ -550,5 +550,6 @@ if __name__ == "__main__":
         variance_threshold=variance_threshold,
         output_dir=r"/lustre/scratch-global/cab/gjaimes/2.DATASETS/PCA_Location_3D_Dataset2_25000_095_GENERIC_h11"
     )
+
 
 
